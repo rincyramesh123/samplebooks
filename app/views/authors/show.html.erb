@@ -1,0 +1,25 @@
+
+<h1><%= @authors.name %></h1>
+
+
+<h2>Books</h2>
+<% @authors.books.each do |book| %>
+  <p>
+    <strong>Books:</strong>
+    <%= book.bname %>
+  </p>
+
+<% end %>
+
+
+<h2>Add a book:</h2>
+<%= form_with model: [ @authors, @authors.books.build ] do |form| %>
+  <p>
+    <%= form.label :BookName %><br>
+    <%= form.text_field :bname %>
+  </p>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

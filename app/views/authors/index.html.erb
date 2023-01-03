@@ -1,0 +1,7 @@
+<% @authors.each do|author| %>
+<li>
+<%= link_to author.name, author %>
+</li>
+<% end %>
+<br><br>
+<%= link_to "New Author", new_author_path %>
